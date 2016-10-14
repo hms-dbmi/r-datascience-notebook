@@ -40,6 +40,7 @@ RUN conda config --add channels r && \
     'r-crayon=1.3*' \
     'r-randomforest=4.6*' && conda clean -tipsy
 
+#install bioconductor packages for R
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R")' -e 'biocLite("oligo")'
 
 RUN Rscript -e 'source("http://bioconductor.org/biocLite.R")' -e 'biocLite("org.Hs.eg.db")'
